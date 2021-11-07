@@ -1,4 +1,4 @@
-﻿<#	
+<#	
 	.NOTES
 	===========================================================================
 	 Created on:   	2021-11-04 06:20
@@ -215,11 +215,11 @@ if (! $KDSRootKeyExists)
 			$specialChars = Get-Random -Minimum 3 -Maximum 12
 			$StrongPassword = [System.Web.Security.Membership]::GeneratePassword(15, $specialChars)
 			
-			$ADDSAccountSamID = Read-Host -Prompt "Please specify new ADDS connector account SAMID ex: AADC_SYNC"
+			$ADDSAccountSamID = Read-Host -Prompt "Please specify new ADDS connector account SAMID ex: ADDS-Connector-Acc"
 			New-ADUser `
-					   -Name "Azure AD Connect Sync Accountw" `
-					   -GivenName "Azure AD Connect" `
-					   -Surname "Sync Account" `
+					   -Name "Active Directory Connector Account" `
+					   -GivenName "ADDS Connector" `
+					   -Surname "Account" `
 					   -SamAccountName "$ADDSAccountSamID" `
 					   -AccountPassword (ConvertTo-SecureString -AsPlainText "$StrongPassword" -Force) `
 					   -Description "This is the ADDS Connector Account used by Azure AD Connect" `
