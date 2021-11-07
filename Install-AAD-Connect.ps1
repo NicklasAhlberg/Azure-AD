@@ -388,11 +388,3 @@ if ($KDSRootKeyExists)
 		Write-Host "OK, no worries. Please close and re-run the script by running: Install-AAD-Connect.ps1 -KDSRootKeyExist $true" -ForegroundColor Yellow
 	}
 }
-
-##### Get ADSync service "Run as-account"
-#Get-WmiObject Win32_service | where { $_.Name -eq 'ADSync' } | Select-Object -Property *
-#### Note the AD Container/OU path for gMSA
-#### Domain level pre-reqs?
-#### Bra doc gällande KDS: https://docs.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/create-the-key-distribution-services-kds-root-key
-### https://timwappat.info/post/2018/09/15/Remove-or-delete-KDSRootKey-(KDS-Root-Key) denna visar hur man tar bort en key
-###### New-ADServiceAccount -Name AzureADConnect -Description "AAD Connect Managed Service Account" -DNSHostName "AzureADConnect.inside.ten.int" -PrincipalsAllowedToRetrieveManagedPassword TEN-HYPERV01$ -Passthru
