@@ -17,6 +17,8 @@
 		- Delegate permissions to the ADDS connector account
 		- Create a KDS Root Key
 		- Create a Group Managed Service Account (gMSA)
+	.DISCLAIMER
+	The script is provided "AS IS" with no warranties
 #>
 
 
